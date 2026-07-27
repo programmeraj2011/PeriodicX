@@ -1,676 +1,387 @@
-/* =====================================================
-   PERIODICX v1.0
-   MAIN STYLE SYSTEM
-===================================================== */
-
-
-
-/* =========================
-   ROOT VARIABLES
-========================= */
-
-
-:root{
-
-    --bg:
-    #020617;
-
-    --card:
-    rgba(255,255,255,0.08);
-
-    --border:
-    rgba(255,255,255,0.12);
-
-    --text:
-    #f8fafc;
-
-    --muted:
-    #94a3b8;
-
-    --primary:
-    #38bdf8;
-
-    --secondary:
-    #8b5cf6;
-
-    --accent:
-    #22c55e;
-
-}
-
-
-
-
-
-/* =========================
-   RESET
-========================= */
-
+/* ======================================================
+   PeriodicX v1
+   Main UI
+   Developed by Aditya Jaiswal
+====================================================== */
 
 *{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-    font-family:
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:"Poppins",sans-serif;
 }
-
-
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-
 
 body{
 
-    background:
-
-    radial-gradient(
-        circle at top,
-        #172554,
-        var(--bg)
-    );
-
-    color:var(--text);
-
-    min-height:100vh;
+background:#0f172a;
+color:#fff;
 
 }
 
+/* Scrollbar */
 
+::-webkit-scrollbar{
 
-
-a{
-
-    text-decoration:none;
-
-    color:inherit;
+width:10px;
 
 }
 
+::-webkit-scrollbar-thumb{
 
+background:#00e5ff;
 
-button{
-
-    border:none;
-
-    cursor:pointer;
+border-radius:20px;
 
 }
-
-
-
-
 
 /* =========================
-   NAVBAR
+        Navbar
 ========================= */
-
 
 .navbar{
 
+position:fixed;
 
-    position:sticky;
+top:0;
 
-    top:0;
+left:0;
 
-    z-index:1000;
+width:100%;
 
+height:75px;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
+padding:0 60px;
 
-    padding:20px 8%;
+background:rgba(15,23,42,.92);
 
+backdrop-filter:blur(15px);
 
-    backdrop-filter:
-    blur(15px);
+z-index:9999;
 
-
-    background:
-    rgba(2,6,23,.75);
-
-
-    border-bottom:
-
-    1px solid var(--border);
-
+border-bottom:1px solid rgba(255,255,255,.08);
 
 }
-
-
-
 
 .logo{
 
+font-size:28px;
 
-    font-size:1.8rem;
+font-weight:bold;
 
-    font-weight:800;
-
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #38bdf8,
-        #8b5cf6
-    );
-
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
+color:#00e5ff;
 
 }
-
-
-
-
 
 nav{
 
+display:flex;
 
-    display:flex;
-
-    gap:25px;
-
+gap:35px;
 
 }
-
-
 
 nav a{
 
+text-decoration:none;
 
-    color:var(--muted);
+color:white;
 
-    transition:.3s;
+font-weight:500;
 
+transition:.3s;
 
 }
-
-
 
 nav a:hover{
 
-
-    color:white;
+color:#00e5ff;
 
 }
-
-
-
-
 
 #themeBtn{
 
+padding:10px 18px;
 
-    background:
+border:none;
 
-    var(--card);
+border-radius:10px;
 
+background:#00e5ff;
 
-    color:white;
+cursor:pointer;
 
-
-    padding:10px 15px;
-
-
-    border-radius:12px;
-
+font-size:18px;
 
 }
 
-
-
-
-
 /* =========================
-   HERO
+        Hero
 ========================= */
-
-
 
 .hero{
 
+min-height:100vh;
 
-    min-height:80vh;
+display:flex;
 
+flex-direction:column;
 
-    display:flex;
+justify-content:center;
 
-    flex-direction:column;
+align-items:center;
 
-    justify-content:center;
+text-align:center;
 
-    align-items:center;
+padding:100px 20px;
 
+background:
 
-    text-align:center;
+linear-gradient(rgba(15,23,42,.8),rgba(15,23,42,.9)),
+url("../images/bg.jpg");
 
+background-size:cover;
 
-    padding:50px 10%;
-
+background-position:center;
 
 }
-
-
 
 .hero h1{
 
+font-size:60px;
 
-    font-size:
+margin-bottom:25px;
 
-    clamp(2.5rem,5vw,4.5rem);
-
-
-    max-width:900px;
-
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #38bdf8,
-        #a855f7,
-        #22c55e
-    );
-
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
+max-width:900px;
 
 }
-
-
-
 
 .hero p{
 
+max-width:700px;
 
-    margin-top:25px;
+font-size:22px;
 
+line-height:1.8;
 
-    max-width:700px;
-
-
-    color:var(--muted);
-
-
-    font-size:1.2rem;
-
-
-    line-height:1.8;
-
+color:#ddd;
 
 }
-
-
-
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-
 
 .primary-btn{
 
+margin-top:35px;
 
-    margin-top:35px;
+padding:18px 35px;
 
+font-size:20px;
 
-    padding:
+border:none;
 
-    15px 35px;
+border-radius:12px;
 
+background:#00e5ff;
 
-    border-radius:50px;
+cursor:pointer;
 
+transition:.3s;
 
-    background:
-
-    linear-gradient(
-        90deg,
-        #38bdf8,
-        #8b5cf6
-    );
-
-
-    color:white;
-
-
-    font-size:1.1rem;
-
-
-    font-weight:700;
-
-
-    transition:.3s;
-
+font-weight:bold;
 
 }
-
-
 
 .primary-btn:hover{
 
+transform:translateY(-6px);
 
-    transform:
-
-    translateY(-5px);
-
-
-    box-shadow:
-
-    0 0 30px
-    rgba(56,189,248,.5);
-
+box-shadow:0 0 30px cyan;
 
 }
-
-
-
-
 
 /* =========================
-   SECTIONS
+      Search
 ========================= */
-
-
-section{
-
-
-    padding:
-
-    80px 8%;
-
-
-}
-
-
-
-section h2{
-
-
-    text-align:center;
-
-
-    font-size:2.5rem;
-
-
-    margin-bottom:40px;
-
-
-}
-
-
-
-
-
-/* =========================
-   SEARCH
-========================= */
-
-
 
 .search-section{
 
+display:flex;
 
-    display:flex;
+justify-content:center;
 
-    justify-content:center;
-
-
-}
-
-
-
-
-#searchBox{
-
-
-    width:min(700px,90%);
-
-
-    padding:18px 25px;
-
-
-    border-radius:50px;
-
-
-    border:
-
-    1px solid var(--border);
-
-
-    background:
-
-    var(--card);
-
-
-    color:white;
-
-
-    font-size:1rem;
-
-
-    outline:none;
-
+padding:60px 20px;
 
 }
 
+.search-section input{
 
+width:700px;
 
+max-width:95%;
 
-#searchBox:focus{
+padding:18px;
 
+font-size:18px;
 
-    border-color:
+border:none;
 
-    var(--primary);
+border-radius:12px;
 
+background:#1e293b;
+
+color:white;
+
+outline:none;
 
 }
-
-
-
-
 
 /* =========================
-   DASHBOARD
+      Section
 ========================= */
 
+section{
 
+padding:80px 30px;
+
+}
+
+section h2{
+
+text-align:center;
+
+margin-bottom:35px;
+
+font-size:38px;
+
+color:#00e5ff;
+
+}
+
+/* =========================
+     Dashboard
+========================= */
 
 .dashboard{
 
-
-    text-align:center;
-
+padding:80px 20px;
 
 }
-
-
-
 
 .stats{
 
+display:grid;
 
-    display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-    gap:30px;
-
+gap:30px;
 
 }
-
-
 
 .stats div{
 
+background:#1e293b;
 
-    padding:30px;
+padding:30px;
 
+border-radius:20px;
 
-    background:
+text-align:center;
 
-    var(--card);
-
-
-    border:
-
-    1px solid var(--border);
-
-
-    border-radius:25px;
-
+transition:.3s;
 
 }
 
+.stats div:hover{
 
+transform:translateY(-8px);
+
+box-shadow:0 0 25px cyan;
+
+}
 
 .stats h3{
 
+font-size:50px;
 
-    font-size:3rem;
+color:#00e5ff;
 
-
-    color:
-
-    var(--primary);
-
+margin-bottom:10px;
 
 }
-
-
-
-.stats p{
-
-
-    color:
-
-    var(--muted);
-
-
-}
-
-
-
 
 /* =========================
-   FOOTER
+      Footer
 ========================= */
-
-
 
 footer{
 
+padding:60px;
 
-    padding:50px;
+text-align:center;
 
+background:#020617;
 
-    text-align:center;
-
-
-    background:
-
-    rgba(0,0,0,.3);
-
-
-    border-top:
-
-    1px solid var(--border);
-
-
-    color:
-
-    var(--muted);
-
+margin-top:60px;
 
 }
-
-
-
-
 
 footer h2{
 
+margin-bottom:20px;
 
-    color:white;
-
-
-    margin-bottom:15px;
-
+color:#00e5ff;
 
 }
 
+footer p{
 
+margin:10px 0;
 
+color:#bbb;
 
+}
 
 /* =========================
-   ANIMATIONS
+      Toast
 ========================= */
 
+.toast{
 
-@keyframes fadeUp{
+position:fixed;
 
+bottom:30px;
 
-    from{
+right:30px;
 
-        opacity:0;
+background:#00e5ff;
 
-        transform:
-        translateY(30px);
+color:#111;
 
-    }
+padding:18px 25px;
 
+border-radius:12px;
 
-    to{
+font-weight:bold;
 
-        opacity:1;
+opacity:0;
 
-        transform:
-        translateY(0);
+transform:translateY(40px);
 
-    }
+transition:.4s;
+
+z-index:99999;
 
 }
 
+.toast.show{
 
+opacity:1;
 
-.hero{
-
-
-    animation:
-
-    fadeUp 1s ease;
-
+transform:translateY(0);
 
 }

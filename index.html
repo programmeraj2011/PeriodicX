@@ -142,12 +142,10 @@ Explore Elements ⚛
 <section class="search-section">
 
 
-<input 
-
-id="searchBox"
-
-placeholder="Search element by name, symbol or atomic number..."
-
+<input
+id="search"
+type="text"
+placeholder="Search element by Name, Symbol or Atomic Number..."
 >
 
 
@@ -172,8 +170,7 @@ Interactive Periodic Table
 </h2>
 
 
-<div id="periodicTable"
-class="periodic-table">
+<div id="periodic-table" class="periodic-table"></div>
 
 
 </div>
@@ -204,12 +201,12 @@ class="modal">
 </button>
 
 
-<div id="elementDetails">
+<div id="element-details">
 
-
-Select an element
+Select an element to view its information.
 
 </div>
+
 
 
 </div>
@@ -229,19 +226,37 @@ Select an element
 
 <section id="flashcards">
 
+<h2>Element Flashcards</h2>
 
-<h2>
+<div id="flashcardContainer"></div>
 
-Element Flashcards
+<div class="flash-buttons">
 
-</h2>
+<button onclick="previousCard()">
+⬅ Previous
+</button>
 
+<button onclick="flipCard()">
+🔄 Flip
+</button>
 
-<div id="flashcardContainer">
+<button onclick="nextCard()">
+Next ➡
+</button>
 
+<button onclick="randomCard()">
+🎲 Random
+</button>
+
+<button onclick="favouriteCard()">
+⭐ Favourite
+</button>
+
+<button onclick="studiedCard()">
+📚 Studied
+</button>
 
 </div>
-
 
 </section>
 
@@ -344,75 +359,37 @@ Choose reactions
 
 <section class="dashboard">
 
-
-<h2>
-
-Learning Progress
-
-</h2>
-
+<h2>Learning Dashboard</h2>
 
 <div class="stats">
 
+<div class="card">
 
-<div>
+<h3 id="studied-count">0</h3>
 
-<h3 id="studiedCount">
-
-0
-
-</h3>
-
-<p>
-
-Elements Studied
-
-</p>
+<p>Elements Studied</p>
 
 </div>
 
+<div class="card">
 
+<h3 id="favourite-count">0</h3>
 
-<div>
-
-<h3 id="quizScore">
-
-0%
-
-</h3>
-
-<p>
-
-Quiz Score
-
-</p>
+<p>Favourite Elements</p>
 
 </div>
 
+</div>
 
+<div class="progress">
 
-<div>
-
-<h3 id="streak">
-
-0
-
-</h3>
-
-<p>
-
-Study Streak
-
-</p>
+<div id="progress-bar"></div>
 
 </div>
 
-
-</div>
-
+<p id="progress-text">0% Completed</p>
 
 </section>
-
 
 
 

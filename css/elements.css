@@ -1,452 +1,235 @@
-/* =====================================================
-   PERIODICX v1.0
-   ELEMENT DETAILS SYSTEM
-===================================================== */
+/* ===================================
+   PeriodicX - Periodic Table
+=================================== */
 
-
-
-/* =========================
-   MODAL BACKGROUND
-========================= */
-
-
-.modal{
-
-
-    position:fixed;
-
-
-    inset:0;
-
-
-    background:
-
-    rgba(0,0,0,.75);
-
-
-    display:none;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    z-index:2000;
-
-
-    padding:20px;
-
-
+#elements{
+    width:95%;
+    margin:50px auto;
 }
 
-
-
-.modal.active{
-
-
-    display:flex;
-
-
+#elements h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#00e5ff;
+    font-size:2rem;
 }
 
+/* PERIODIC GRID */
 
-
-
-
-/* =========================
-   MODAL BOX
-========================= */
-
-
-.modal-box{
-
-
-    width:min(900px,95%);
-
-
-    max-height:90vh;
-
-
-    overflow-y:auto;
-
-
-    background:
-
-    #0f172a;
-
-
-    border:
-
-    1px solid #334155;
-
-
-    border-radius:30px;
-
-
-    padding:40px;
-
-
-    color:white;
-
-
-    box-shadow:
-
-    0 0 50px
-    rgba(56,189,248,.4);
-
-
-}
-
-
-
-
-#closeModal{
-
-
-    float:right;
-
-
-    background:#ef4444;
-
-
-    color:white;
-
-
-    padding:10px 15px;
-
-
-    border-radius:12px;
-
-
-    font-size:1rem;
-
-
-}
-
-
-
-
-/* =========================
-   ELEMENT HEADER
-========================= */
-
-
-
-.element-header{
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    gap:30px;
-
-
-    margin-bottom:35px;
-
-
-}
-
-
-
-
-
-.big-symbol{
-
-
-    width:120px;
-
-
-    height:120px;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    border-radius:25px;
-
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #38bdf8,
-        #8b5cf6
-    );
-
-
-    font-size:4rem;
-
-
-    font-weight:900;
-
-
-}
-
-
-
-
-
-.element-header h2{
-
-
-    color:white;
-
-
-    font-size:2.5rem;
-
-
-}
-
-
-
-.element-header p{
-
-
-    color:#cbd5e1;
-
-
-    font-size:1.1rem;
-
-
-}
-
-
-
-
-
-/* =========================
-   ATOMIC INFO GRID
-========================= */
-
-
-
-.info-grid{
-
+.periodic-table{
 
     display:grid;
 
+    grid-template-columns:repeat(18,70px);
 
-    grid-template-columns:
+    grid-auto-rows:70px;
 
-    repeat(3,1fr);
+    gap:8px;
 
+    justify-content:center;
 
-    gap:20px;
+    align-items:center;
 
+    margin:auto;
 
-}
-
-
-
-
-
-.info-box{
-
-
-    padding:25px;
-
-
-    border-radius:20px;
-
-
-    background:
-
-    #1e293b;
-
-
-    border:
-
-    1px solid #334155;
-
+    padding:20px;
 
 }
 
+/* ELEMENT CARD */
 
+.element{
 
+    background:#1e293b;
 
+    border:2px solid #334155;
 
-.info-box h3{
+    border-radius:10px;
 
+    display:flex;
 
-    color:#38bdf8;
+    flex-direction:column;
 
+    justify-content:center;
 
-    margin-bottom:10px;
+    align-items:center;
 
+    cursor:pointer;
 
-}
+    transition:.3s;
 
+    color:#fff;
 
-
-.info-box p{
-
-
-    color:#f8fafc;
-
-
-    font-size:1.1rem;
-
-
-}
-
-
-
-
-
-
-
-/* =========================
-   CONFIGURATION
-========================= */
-
-
-.configuration-box{
-
-
-    margin-top:30px;
-
-
-    padding:25px;
-
-
-    border-radius:20px;
-
-
-    background:
-
-    #020617;
-
-
-    border:
-
-    1px solid #38bdf8;
-
+    overflow:hidden;
 
 }
 
+.element:hover{
 
+    transform:scale(1.08);
 
-.configuration-box h3{
+    box-shadow:0 0 20px cyan;
 
-
-    color:#38bdf8;
-
-
-}
-
-
-
-.configuration-box code{
-
-
-    color:#22c55e;
-
-
-    font-size:1.3rem;
-
+    border-color:#00e5ff;
 
 }
 
+/* Atomic Number */
 
+.atomic-number{
 
+    font-size:11px;
 
-
-/* =========================
-   USES AND FACTS
-========================= */
-
-
-.element-section{
-
-
-    margin-top:30px;
-
-
-    padding:25px;
-
-
-    background:
-
-    #1e293b;
-
-
-    border-radius:20px;
-
+    color:#ccc;
 
 }
 
+/* Symbol */
 
+.symbol{
 
+    font-size:24px;
 
-.element-section h3{
+    font-weight:bold;
 
-
-    color:#facc15;
-
-
-    margin-bottom:15px;
-
+    color:white;
 
 }
 
+/* Name */
 
+.name{
 
-.element-section p,
-.element-section li{
+    font-size:10px;
 
-
-    color:#f8fafc;
-
-
-    line-height:1.8;
-
+    text-align:center;
 
 }
 
+/* Mass */
 
+.mass{
 
+    font-size:9px;
 
+    color:#aaa;
 
-/* =========================
-   RESPONSIVE
-========================= */
+}
 
+/* CATEGORY COLOURS */
 
+.alkali{
+
+    background:#ff595e;
+
+}
+
+.alkaline{
+
+    background:#ff924c;
+
+}
+
+.transition{
+
+    background:#1982c4;
+
+}
+
+.post{
+
+    background:#6a4c93;
+
+}
+
+.metalloid{
+
+    background:#2a9d8f;
+
+}
+
+.nonmetal{
+
+    background:#43aa8b;
+
+}
+
+.halogen{
+
+    background:#f9c74f;
+
+    color:#111;
+
+}
+
+.noble{
+
+    background:#4cc9f0;
+
+    color:#111;
+
+}
+
+.lanthanide{
+
+    background:#ff70a6;
+
+}
+
+.actinide{
+
+    background:#9d4edd;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1400px){
+
+.periodic-table{
+
+transform:scale(.9);
+
+transform-origin:top center;
+
+}
+
+}
+
+@media(max-width:1100px){
+
+.periodic-table{
+
+transform:scale(.75);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.periodic-table{
+
+transform:scale(.6);
+
+}
+
+}
 
 @media(max-width:700px){
 
+.periodic-table{
 
-    .info-grid{
+display:grid;
 
+grid-template-columns:repeat(18,72px);
 
-        grid-template-columns:1fr;
+grid-template-rows:repeat(10,72px);
 
+gap:8px;
 
-    }
+justify-content:center;
 
+padding:20px;
 
-
-    .element-header{
-
-
-        flex-direction:column;
-
-
-        text-align:center;
-
-
-    }
-
-
-}
+} }

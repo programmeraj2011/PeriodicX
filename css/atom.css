@@ -1,0 +1,192 @@
+/* =====================================================
+   PeriodicX v1
+   Animated Bohr Model
+===================================================== */
+
+#atom{
+    width:100%;
+    padding:80px 20px;
+    text-align:center;
+}
+
+#atom h2{
+    color:#00e5ff;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+#atomViewer{
+
+    position:relative;
+
+    width:700px;
+
+    height:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+      Nucleus
+=========================== */
+
+.nucleus{
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#ff4d4d,#ff9800);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    z-index:999;
+
+    box-shadow:0 0 40px #ff9800;
+
+}
+
+.nucleus h2{
+
+    margin:0;
+
+    font-size:34px;
+
+}
+
+.nucleus span{
+
+    font-size:15px;
+
+    opacity:.8;
+
+}
+
+/* ===========================
+      Orbit Shell
+=========================== */
+
+.shell{
+
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.2);
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:rotateOrbit linear infinite;
+
+}
+
+/* ===========================
+      Electron
+=========================== */
+
+.electron{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#00e5ff;
+
+    box-shadow:
+
+        0 0 15px cyan,
+
+        0 0 30px cyan;
+
+}
+
+/* ===========================
+      Orbit Animation
+=========================== */
+
+@keyframes rotateOrbit{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+      Responsive
+=========================== */
+
+@media(max-width:900px){
+
+#atomViewer{
+
+width:500px;
+
+height:500px;
+
+}
+
+}
+
+@media(max-width:650px){
+
+#atomViewer{
+
+width:350px;
+
+height:350px;
+
+}
+
+.nucleus{
+
+width:80px;
+
+height:80px;
+
+}
+
+.nucleus h2{
+
+font-size:26px;
+
+}
+
+}
