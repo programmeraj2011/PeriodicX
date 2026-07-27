@@ -1,0 +1,483 @@
+/* =====================================================
+   PERIODICX v1.0
+   PERIODIC TABLE STYLE
+===================================================== */
+
+
+
+/* =========================
+   PERIODIC TABLE CONTAINER
+========================= */
+
+
+.periodic-table{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(18,1fr);
+
+
+    gap:8px;
+
+
+    max-width:1400px;
+
+
+    margin:auto;
+
+
+    padding:20px;
+
+
+}
+
+
+
+
+
+/* =========================
+   ELEMENT CARD
+========================= */
+
+
+.element-card{
+
+
+    min-height:90px;
+
+
+    padding:10px;
+
+
+    border-radius:15px;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+    backdrop-filter:
+
+    blur(10px);
+
+
+}
+
+
+
+
+
+.element-card:hover{
+
+
+    transform:
+
+    translateY(-8px)
+    scale(1.05);
+
+
+    box-shadow:
+
+    0 0 25px
+    rgba(56,189,248,.5);
+
+
+}
+
+
+
+
+
+/* =========================
+   ELEMENT TEXT
+========================= */
+
+
+
+.atomic-number{
+
+
+    font-size:.75rem;
+
+
+    color:#94a3b8;
+
+
+    align-self:flex-start;
+
+
+}
+
+
+
+.element-symbol{
+
+
+    font-size:2rem;
+
+
+    font-weight:900;
+
+
+}
+
+
+
+.element-name{
+
+
+    font-size:.75rem;
+
+
+    color:#cbd5e1;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+/* =========================
+   CATEGORY COLORS
+========================= */
+
+
+
+.alkali-metal{
+
+
+    background:
+
+    rgba(239,68,68,.25);
+
+}
+
+
+
+.alkaline-earth{
+
+
+    background:
+
+    rgba(249,115,22,.25);
+
+}
+
+
+
+.transition-metal{
+
+
+    background:
+
+    rgba(59,130,246,.25);
+
+}
+
+
+
+.post-transition{
+
+
+    background:
+
+    rgba(234,179,8,.25);
+
+}
+
+
+
+.metalloid{
+
+
+    background:
+
+    rgba(34,197,94,.25);
+
+}
+
+
+
+.non-metal{
+
+
+    background:
+
+    rgba(16,185,129,.25);
+
+}
+
+
+
+.halogen{
+
+
+    background:
+
+    rgba(168,85,247,.25);
+
+}
+
+
+
+.noble-gas{
+
+
+    background:
+
+    rgba(6,182,212,.25);
+
+}
+
+
+
+.lanthanide{
+
+
+    background:
+
+    rgba(217,70,239,.25);
+
+}
+
+
+
+.actinide{
+
+
+    background:
+
+    rgba(107,114,128,.25);
+
+}
+
+
+
+
+
+/* =========================
+   PERIOD LABELS
+========================= */
+
+
+
+.period-label{
+
+
+    color:#94a3b8;
+
+
+    font-weight:bold;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+.group-label{
+
+
+    color:#94a3b8;
+
+
+    font-size:.8rem;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+/* =========================
+   EMPTY SPACES
+========================= */
+
+
+.empty-space{
+
+
+    visibility:hidden;
+
+
+}
+
+
+
+
+
+/* =========================
+   LANTHANIDE ACTINIDE ROWS
+========================= */
+
+
+
+.extra-elements{
+
+
+    margin-top:40px;
+
+
+}
+
+
+
+.extra-elements h3{
+
+
+    text-align:center;
+
+
+    color:#38bdf8;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+.extra-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(15,1fr);
+
+
+    gap:8px;
+
+
+}
+
+
+
+
+
+/* =========================
+   SELECTED ELEMENT
+========================= */
+
+
+.element-card.selected{
+
+
+    border:
+
+    2px solid #38bdf8;
+
+
+    box-shadow:
+
+    0 0 35px
+    rgba(56,189,248,.7);
+
+
+}
+
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+
+@media(max-width:1000px){
+
+
+    .periodic-table{
+
+
+        overflow-x:auto;
+
+
+        grid-template-columns:
+
+        repeat(18,70px);
+
+
+    }
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .element-card{
+
+
+        min-height:70px;
+
+
+    }
+
+
+    .element-symbol{
+
+
+        font-size:1.4rem;
+
+
+    }
+
+
+}

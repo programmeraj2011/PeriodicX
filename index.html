@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PeriodicX | Interactive Periodic Table</title>
+
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/periodic.css">
+
+<link rel="stylesheet" href="css/elements.css">
+
+<link rel="stylesheet" href="css/flashcards.css">
+
+<link rel="stylesheet" href="css/quiz.css">
+
+<link rel="stylesheet" href="css/atom.css">
+
+<link rel="stylesheet" href="css/lab.css">
+
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<!-- PWA -->
+
+<link rel="manifest" href="manifest.json">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+ NAVBAR
+========================= -->
+
+
+<header class="navbar">
+
+
+<div class="logo">
+
+⚛ PeriodicX
+
+</div>
+
+
+<nav>
+
+<a href="#home">
+Home
+</a>
+
+
+<a href="#elements">
+Elements
+</a>
+
+
+<a href="#flashcards">
+Flashcards
+</a>
+
+
+<a href="#quiz">
+Quiz
+</a>
+
+
+<a href="#lab">
+Chemistry Lab
+</a>
+
+
+</nav>
+
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+
+</header>
+
+
+
+
+<!-- =========================
+ HERO
+========================= -->
+
+
+<section id="home" class="hero">
+
+
+<h1>
+
+Discover The Building Blocks Of Universe
+
+</h1>
+
+
+<p>
+
+Explore all 118 chemical elements with
+interactive visuals, flashcards,
+quizzes and atomic structures.
+
+</p>
+
+
+<button class="primary-btn" onclick="scrollToElements()">
+
+Explore Elements ⚛
+
+</button>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+ SEARCH
+========================= -->
+
+
+<section class="search-section">
+
+
+<input 
+
+id="searchBox"
+
+placeholder="Search element by name, symbol or atomic number..."
+
+>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+ PERIODIC TABLE
+========================= -->
+
+
+<section id="elements">
+
+
+<h2>
+
+Interactive Periodic Table
+
+</h2>
+
+
+<div id="periodicTable"
+class="periodic-table">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+ ELEMENT DETAILS
+========================= -->
+
+
+<div id="elementModal"
+class="modal">
+
+
+<div class="modal-box">
+
+
+<button id="closeModal">
+
+✖
+
+</button>
+
+
+<div id="elementDetails">
+
+
+Select an element
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- =========================
+ FLASHCARDS
+========================= -->
+
+
+<section id="flashcards">
+
+
+<h2>
+
+Element Flashcards
+
+</h2>
+
+
+<div id="flashcardContainer">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- =========================
+ QUIZ
+========================= -->
+
+
+<section id="quiz">
+
+
+<h2>
+
+Chemistry Quiz
+
+</h2>
+
+
+<div id="quizContainer">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- =========================
+ ATOM VIEWER
+========================= -->
+
+
+<section id="atom">
+
+
+<h2>
+
+Atomic Structure Viewer
+
+</h2>
+
+
+<div id="atomViewer">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- =========================
+ CHEMISTRY LAB
+========================= -->
+
+
+<section id="lab">
+
+
+<h2>
+
+Virtual Chemistry Lab
+
+</h2>
+
+
+<div id="reactionArea">
+
+
+Choose reactions
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+ DASHBOARD
+========================= -->
+
+
+<section class="dashboard">
+
+
+<h2>
+
+Learning Progress
+
+</h2>
+
+
+<div class="stats">
+
+
+<div>
+
+<h3 id="studiedCount">
+
+0
+
+</h3>
+
+<p>
+
+Elements Studied
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3 id="quizScore">
+
+0%
+
+</h3>
+
+<p>
+
+Quiz Score
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3 id="streak">
+
+0
+
+</h3>
+
+<p>
+
+Study Streak
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+ FOOTER
+========================= -->
+
+
+<footer>
+
+
+<h2>
+
+⚛ PeriodicX
+
+</h2>
+
+
+<p>
+
+Learn Chemistry Visually
+
+</p>
+
+
+<p>
+
+Developed by Aditya Jaiswal
+
+</p>
+
+
+</footer>
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+
+<script src="js/elements.js"></script>
+
+<script src="js/storage.js"></script>
+
+<script src="js/periodic.js"></script>
+
+<script src="js/flashcards.js"></script>
+
+<script src="js/quiz.js"></script>
+
+<script src="js/atom.js"></script>
+
+<script src="js/lab.js"></script>
+
+<script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>
